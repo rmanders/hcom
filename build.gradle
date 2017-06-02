@@ -1,0 +1,74 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        jcenter()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("net.researchgate:gradle-release:${gradleReleaseVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'jacoco'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'net.researchgate.release'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenLocal()
+    jcenter()
+    mavenCentral()
+}
+
+dependencies {
+    compile('commons-io:commons-io:2.5')
+    compile('org.springframework.boot:spring-boot-starter-actuator')
+    compile('org.springframework.boot:spring-boot-starter-jdbc')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-configuration-processor')
+    compile('org.springframework.data:spring-data-mongodb:1.10.3.RELEASE')
+    compileOnly('org.projectlombok:lombok:1.16.14')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+jar {
+    archiveName = "${artifactId}.jar"
+    baseName = "${artifactId}"
+    version =  "${version}"
+    from sourceSets.main.allSource
+    manifest {
+        attributes(
+                "Implementation-Title": "${groupId}.${artifactId}",
+                "Implementation-Version": "${version}",
+                "Implementation-Vendor": "${vendorName}",
+                "Specification-Title": "${specificationTitle}",
+                "Source-Compatibility": project.sourceCompatibility,
+                "Target-Compatibility": project.targetCompatibility,
+                "Built-By": System.getProperty('user.name'),
+                "Built-JDK": System.getProperty('java.version'),
+                "Build-Date": (new Date()).format('yyyy-MM-dd.HH:mm')
+        )
+    }
+}
+
+test {
+    jacoco {
+        append = false
+        destinationFile = file("${buildDir}/jacoco/jacocoTest.exec")
+        classDumpFile = file("${buildDir}/jacoco/classpathdumps")
+    }
+}
+
+jacocoTestReport {
+    afterEvaluate {
+        classDirectories = files(classDirectories.files.collect {
+            fileTree(dir: it, exclude: [])
+        })
+    }
+}
