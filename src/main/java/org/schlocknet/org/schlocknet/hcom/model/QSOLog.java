@@ -11,17 +11,32 @@ public class QSOLog {
     /**
      * The callsign of the station / person who created this log record
      */
-    private String userCallsign;
+    private String callsign;
 
     /**
      * The callsign of the station that was contacted
      */
-    private String callsign;
+    private String stationWorked;
 
     /**
-     * The time this QSO started in UTC milliseconds since unix epoch
+     * The time this QSO started (in UTC milliseconds since unix epoch)
      */
-    private Long beginTime = System.currentTimeMillis();
+    private Long timeStart = System.currentTimeMillis();
+
+    /**
+     * The time (if recorded) the QSO ended (in UTC milliseconds since unix epoch)
+     */
+    private Long timeEnd;
+
+    /**
+     * The RF power (in Watt) used to transmit
+     */
+    private Double power;
+
+    /**
+     * Grid location of the station contacted
+     */
+    private String qth;
 
     /**
      * The RST report that was sent by the creator of this QSO record
