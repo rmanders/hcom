@@ -1,11 +1,13 @@
 package org.schlocknet.org.schlocknet.hcom.model;
 
 import lombok.Data;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * Represents a Logged QSO event
  */
 @Data
+@Document(collection = "qso.logs")
 public class QSOLog {
 
     /**
