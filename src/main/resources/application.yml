@@ -1,12 +1,12 @@
 spring:
   application:
-    name: Hcom
+    name: Rad.io
   profiles:
     active: local
 
 server:
   port: 8081
-  context-path: /hcom
+  context-path: /api
 
 ---
 
