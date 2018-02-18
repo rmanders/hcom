@@ -1,6 +1,6 @@
-package org.schlocknet.org.schlocknet.hcom.controller;
+package org.schlocknet.rad.io.controller;
 
-import org.schlocknet.org.schlocknet.hcom.model.QSOLog;
+import org.schlocknet.rad.io.model.QSOLog;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestMapping;

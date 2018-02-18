@@ -1,7 +1,7 @@
-package org.schlocknet.org.schlocknet.hcom.dao;
+package org.schlocknet.rad.io.dao;
 
 
-import org.schlocknet.org.schlocknet.hcom.model.QSOLog;
+import org.schlocknet.rad.io.model.QSOLog;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

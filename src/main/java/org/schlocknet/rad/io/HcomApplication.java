@@ -1,4 +1,4 @@
-package org.schlocknet;
+package org.schlocknet.rad.io;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

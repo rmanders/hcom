@@ -1,14 +1,25 @@
-package org.schlocknet.org.schlocknet.hcom.model;
+package org.schlocknet.rad.io.model;
 
 import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.util.UUID;
 
 /**
  * Represents a Logged QSO event
  */
 @Data
+@Entity
 @Document(collection = "qso.logs")
 public class QSOLog {
+
+    /**
+     * Unique Id of the record
+     */
+    @Id
+    private UUID qsoId = UUID.randomUUID();
 
     /**
      * The callsign of the station / person who created this log record

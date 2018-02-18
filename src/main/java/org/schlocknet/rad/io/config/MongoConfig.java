@@ -1,4 +1,4 @@
-package org.schlocknet.org.schlocknet.hcom.config;
+package org.schlocknet.rad.io.config;
 
 import com.mongodb.Mongo;
 import lombok.Data;
