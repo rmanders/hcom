@@ -10,9 +10,9 @@ import org.springframework.core.env.Environment;
 import org.springframework.data.mongodb.core.MongoClientFactoryBean;
 import org.springframework.data.mongodb.core.MongoTemplate;
 
-@Data
-@Profile("mongo")
-@Configuration
+//@Data
+//@Profile("mongo")
+//@Configuration
 public class MongoConfig {
 
     @Autowired

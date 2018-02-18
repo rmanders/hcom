@@ -2,9 +2,12 @@ package org.schlocknet.rad.io.dao;
 
 
 import org.schlocknet.rad.io.model.QSOLog;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.UUID;
+
 @Repository
-public interface QsoLogDao extends MongoRepository<QSOLog, String> {
+public interface QsoLogDao extends JpaRepository<QSOLog, UUID> {
 }
