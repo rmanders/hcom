@@ -14,9 +14,9 @@ spring:
   profiles: local
 
 database:
-  mongo:
-    database: hcom
-    host: localhost
+  type: nitrite
+  filepath: "rad-io.db"
+
 
 logging:
   level:

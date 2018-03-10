@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.UUID;
 
-@Repository
+
 public interface QsoLogDao extends JpaRepository<QSOLog, UUID> {
 }
